@@ -7,7 +7,7 @@ package br.gov.es.pmo.organization_parser.pmo_base.model;
  * @param <ID> tipo do identificador da organização (ex: guid)
  *
  */
-public interface IOrganizerParser<ID> {
+public interface IOrganizationParser<ID> {
 
     /**
      * Retorna o identificador único da organização

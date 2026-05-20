@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Service;
 
-import br.gov.es.pmo.organization_parser.pmo_base.model.IOrganizerParser;
+import br.gov.es.pmo.organization_parser.pmo_base.model.IOrganizationParser;
 
 
 /**
@@ -20,12 +20,12 @@ import br.gov.es.pmo.organization_parser.pmo_base.model.IOrganizerParser;
 @Service
 public class ProviderService {
     
-    private final Map<String, IOrganizerParser<?>> providers;
+    private final Map<String, IOrganizationParser<?>> providers;
     
     private final ClientCredentialService clientCredentialService;
         
     public ProviderService(
-        final Map<String, IOrganizerParser<?>> providers,
+        final Map<String, IOrganizationParser<?>> providers,
         final ClientCredentialService clientCredentialService
     ){
         this.providers = providers;
@@ -52,9 +52,9 @@ public class ProviderService {
        
     
     
-    public IOrganizerParser<?> getProvider() {
+    public IOrganizationParser<?> getProvider() {
         
-        IOrganizerParser<?> provider = this.providers.get(this.getRegistrationId());
+        IOrganizationParser<?> provider = this.providers.get(this.getRegistrationId());
         
         if(provider == null) {
             throw new IllegalStateException("Provider não implementado: " + getRegistrationId() );
