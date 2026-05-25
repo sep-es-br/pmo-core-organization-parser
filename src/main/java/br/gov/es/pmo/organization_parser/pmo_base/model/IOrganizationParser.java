@@ -1,5 +1,6 @@
 package br.gov.es.pmo.organization_parser.pmo_base.model;
 
+import net.minidev.json.JSONArray;
 /**
  *
  * Parser responsável por extrair dados de Organização a partir do OAuth2User
@@ -9,22 +10,12 @@ package br.gov.es.pmo.organization_parser.pmo_base.model;
  */
 public interface IOrganizationParser<ID> {
 
-    /**
-     * Retorna o identificador único da organização
-     * Ex: guid
-     */
-    ID getId(String clientToken);
-
-    /**
-     * Retorna o nome curto da organização
-     * Ex: sigla
-     */
-    String getNome(String clientToken);
-
-    /**
-     * Retorna o nome completo / razão social da organização
-     * Ex: razaoSocial
-     */
-    String getFullName(String clientToken);
+        /**
+        * Extrai o identificador da organização a partir do OAuth2User
+        *
+        * @param token token de acesso do usuário
+        * @return identificador das organizações
+        */
+        JSONArray getOrganizations(String token);
 
 }

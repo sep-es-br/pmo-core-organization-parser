@@ -65,18 +65,8 @@ public class ProviderService {
                     
     }
     
-    
-    public Object getId(){
-        return this.getProvider().getId(getClientToken());
+    public String getOrganizations() {
+        return this.getProvider().getOrganizations(getClientToken()).toJSONString();
     }
-    
-    public String getNome() {
-        return this.getProvider().getNome(getClientToken());
-    }
-    
-    public String getFullname() {
-        return this.getProvider().getFullName(getClientToken());
-    }
-    
     
 }
