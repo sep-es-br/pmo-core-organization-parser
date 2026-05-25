@@ -4,6 +4,7 @@
  */
 package br.gov.es.pmo.organization_parser.pmo_base.service;
 
+import java.util.List;
 import java.util.Map;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -66,7 +67,7 @@ public class ProviderService {
                     
     }
     
-    public OrganizationDto getOrganizations() {
+    public List<OrganizationDto> getOrganizations() {
         return this.getProvider().getOrganizations(getClientToken());
     }
     
