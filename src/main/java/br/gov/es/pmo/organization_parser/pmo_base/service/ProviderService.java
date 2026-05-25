@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.client.authentication.OAuth2Authentic
 import org.springframework.stereotype.Service;
 
 import br.gov.es.pmo.organization_parser.pmo_base.model.IOrganizationParser;
+import br.gov.es.pmo.organization_parser.pmo_base.model.OrganizationDto;
 
 
 /**
@@ -65,8 +66,8 @@ public class ProviderService {
                     
     }
     
-    public String getOrganizations() {
-        return this.getProvider().getOrganizations(getClientToken()).toJSONString();
+    public OrganizationDto getOrganizations() {
+        return this.getProvider().getOrganizations(getClientToken());
     }
     
 }
