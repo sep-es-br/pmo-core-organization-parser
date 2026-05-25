@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PmoBaseApplication {
+public class OrganizationParserBaseApplication  {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PmoBaseApplication.class, args);
+		SpringApplication.run(OrganizationParserBaseApplication .class, args);
 	}
 
 }
